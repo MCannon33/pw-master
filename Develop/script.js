@@ -60,9 +60,12 @@ var alphaUpper = [
   "Z",
 ];
 
+//var newPassword = [];
 //Prompt password criteria selections
-var passwordCriteria = window.alert("Welcome create your password here!");
-var confirmCriteria = window.confirm("Select your password criteria");
+//var passwordCriteria = window.alert("Welcome create your password here!");
+var confirmCriteria = window.confirm(
+  "Select the Generate Password button to begin"
+);
 //if (confirmCriteria === "confirm" || confirmCriteria === "CONFIRM"){
 //var confirmNumbers = window.prompt("Please enter the number of characters you would like the password to")
 //var confirmCharacters = window.confirm("Would you like to use special characters?")
@@ -70,27 +73,40 @@ var confirmCriteria = window.confirm("Select your password criteria");
 //var confirmUpper = window.confirm("Would you like to use upper case letters?")
 //console.log(confirmNumbers)
 
+
 function generatePassword() {
-  confirmNumbers = parseInt(
-    prompt(
-      "Please enter the number of characters you would like the password to"
-    )
+  var confirmNumbers = parseInt(
+    prompt("How many characters would you like the password to be?")
   );
   if (!confirmNumbers) {
-    alert("Please enter a number")
+    alert("Please enter a number");
     return "";
   }
   if (confirmNumbers < 8 || confirmNumbers > 128) {
-    confirmNumber = parseInt(prompt("You must choose between 8 and 128"));
-    return "";
+    confirmNumbers = parseInt(prompt("You must choose between 8 and 128"));
   }
-  // Continues once user input is validated
-  //confirmNumber = confirm("Will this contain numbers?");
-  //confirmCharacters = confirm("Will this contain special characters?");
-  //confirmUpper = confirm("Will this contain Uppercase letters?");
-  //confirmLower = confirm("Will this contain Lowercase letters?");
-  //console.log(confirmNumbers);
-  return confirmNumbers;
+
+  // Continues once user input is validate
+    if (confirm("Will this password contain Lowercase letters?") === true) {
+      ((alphaLower));
+    //return alphaLower;
+    }
+    if (confirm("Will this password contain Uppercase letters?") === true) {
+      ((alphaUpper));
+    //return alphaUpper;
+  //return alphaLower + alphaUpper; 
+  }
+  return gen;
+}
+
+var allCriteria = alphaUpper + alphaLower;
+
+
+//var password = "";
+
+for (var i = 0; i < 128; i++) {
+var gen = allCriteria[Math.floor(Math.random() * allCriteria.length)];
+password += gen;
 }
 
 // Get references to the #generate element
