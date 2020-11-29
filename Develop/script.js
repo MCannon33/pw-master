@@ -60,10 +60,13 @@ var alphaUpper = [
   "Z",
 ];
 
-//var newPassword = [];
+var password = "";
+var pwd = "";
+//var confirmNumbers = ""
+//var allCriteria = alphaLower + alphaUpper + confirmNumbers
 //Prompt password criteria selections
 //var passwordCriteria = window.alert("Welcome create your password here!");
-var confirmCriteria = window.confirm(
+var beginCriteria = window.confirm(
   "Select the Generate Password button to begin"
 );
 //if (confirmCriteria === "confirm" || confirmCriteria === "CONFIRM"){
@@ -73,41 +76,35 @@ var confirmCriteria = window.confirm(
 //var confirmUpper = window.confirm("Would you like to use upper case letters?")
 //console.log(confirmNumbers)
 
-
 function generatePassword() {
-  var confirmNumbers = parseInt(
-    prompt("How many characters would you like the password to be?")
-  );
-  if (!confirmNumbers) {
-    alert("Please enter a number");
-    return "";
+  var confirmNumbers = "";
+  while (confirmNumbers < 8 || confirmNumbers > 128) {
+    confirmNumbers = prompt("You must choose between 8 and 128");
+    if (confirmNumbers === true) {
+      return;
+    }
   }
-  if (confirmNumbers < 8 || confirmNumbers > 128) {
-    confirmNumbers = parseInt(prompt("You must choose between 8 and 128"));
-  }
-
-  // Continues once user input is validate
+  if (confirmNumbers) {
+    // Continues once user input is validate
     if (confirm("Will this password contain Lowercase letters?") === true) {
-      ((alphaLower));
-    //return alphaLower;
+      alphaLower;
+      //return alphaLower;
     }
     if (confirm("Will this password contain Uppercase letters?") === true) {
-      ((alphaUpper));
-    //return alphaUpper;
-  //return alphaLower + alphaUpper; 
+      alphaUpper;
+      //return alphaUpper;
+    }
+    return gen;
   }
-  return gen;
 }
-
-var allCriteria = alphaUpper + alphaLower;
-
-
-//var password = "";
+  
+var allCriteria = alphaLower + alphaUpper 
 
 for (var i = 0; i < 128; i++) {
 var gen = allCriteria[Math.floor(Math.random() * allCriteria.length)];
-password += gen;
 }
+
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
