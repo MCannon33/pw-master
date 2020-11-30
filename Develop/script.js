@@ -78,10 +78,10 @@ var beginCriteria = window.confirm(
 
 function generatePassword() {
   var confirmNumbers = "";
-  while (confirmNumbers < 8 || confirmNumbers > 128) {
+ if (confirmNumbers < 8 || confirmNumbers > 128) {
     confirmNumbers = prompt("You must choose between 8 and 128");
     if (confirmNumbers === true) {
-      break;
+      return;
     }
   }
   if (confirmNumbers) {
