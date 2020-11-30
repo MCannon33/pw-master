@@ -96,20 +96,16 @@ function generatePassword() {
     }
     //return gen;
   }
-
   
 //var allCriteria = alphaLower + alphaUpper 
- pwd = gen (confirmNumbers, alphaUpper);
+ //var pwd = gen (confirmNumbers, alphaUpper);
 
-
-function gen (alphaUpper) {
-var pwd = ""
   for (var i = 0; i < 128; i++) {
  var pwd = alphaUpper[Math.floor(Math.random() * alphaUpper.length)];
 }
 return pwd;
 }
-}
+
 
 
 // Get references to the #generate element
