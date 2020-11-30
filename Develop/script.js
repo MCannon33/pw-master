@@ -60,7 +60,7 @@ var alphaUpper = [
   "Z",
 ];
 
-var password = "";
+//var password = "";
 var pwd = "";
 //var confirmNumbers = ""
 //var allCriteria = alphaLower + alphaUpper + confirmNumbers
@@ -81,7 +81,7 @@ function generatePassword() {
   while (confirmNumbers < 8 || confirmNumbers > 128) {
     confirmNumbers = prompt("You must choose between 8 and 128");
     if (confirmNumbers === true) {
-      return;
+      break;
     }
   }
   if (confirmNumbers) {
@@ -94,16 +94,22 @@ function generatePassword() {
       alphaUpper;
       //return alphaUpper;
     }
-    return gen;
+    //return gen;
   }
-}
+
   
-var allCriteria = alphaLower + alphaUpper 
+//var allCriteria = alphaLower + alphaUpper 
+ pwd = gen (confirmNumbers, alphaUpper);
 
-for (var i = 0; i < 128; i++) {
-var gen = allCriteria[Math.floor(Math.random() * allCriteria.length)];
+
+function gen (alphaUpper) {
+var pwd = ""
+  for (var i = 0; i < 128; i++) {
+ var pwd = alphaUpper[Math.floor(Math.random() * alphaUpper.length)];
 }
-
+return pwd;
+}
+}
 
 
 // Get references to the #generate element
