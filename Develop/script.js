@@ -62,6 +62,7 @@ var alphaUpper = [
 
 //var password = "";
 var pwd = "";
+//var pwd = gen (confirmNumbers, alphaUpper);
 //var confirmNumbers = ""
 //var allCriteria = alphaLower + alphaUpper + confirmNumbers
 //Prompt password criteria selections
@@ -98,10 +99,11 @@ function generatePassword() {
   }
   
 //var allCriteria = alphaLower + alphaUpper 
- //var pwd = gen (confirmNumbers, alphaUpper);
+  var gen = (confirmNumbers, alphaUpper);
 
   for (var i = 0; i < 128; i++) {
- var pwd = alphaUpper[Math.floor(Math.random() * alphaUpper.length)];
+ var pwd = gen[Math.floor(Math.random() * gen.length)];
+ 
 }
 return pwd;
 }
