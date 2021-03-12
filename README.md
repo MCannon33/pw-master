@@ -10,4 +10,4 @@ _Javascript 101_
 
 ---
 
-- [Github](https://github.com/MCannon33/pw-master)
+- [My Github](https://github.com/MCannon33/pw-master)
